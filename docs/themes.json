@@ -244,7 +244,7 @@
     "lightness": 154,
     "contrast": 64,
     "isLight": true,
-    "screenshot": "alabaster-1970.png",
+    "screenshot": "alabaster-1970.jpg",
     "animationName": "Minimalist Rotary Dial & Precision Ticks"
   },
   {
@@ -264,7 +264,7 @@
     "lightness": 152,
     "contrast": 64,
     "isLight": true,
-    "screenshot": "sakura-studio.png",
+    "screenshot": "sakura-studio.jpg",
     "animationName": "Floating Washi Sakura & Champagne Dust"
   },
   {
@@ -284,7 +284,7 @@
     "lightness": 153,
     "contrast": 64,
     "isLight": true,
-    "screenshot": "glacial-frost.png",
+    "screenshot": "glacial-frost.jpg",
     "animationName": "Nordic Hexagonal Ice Lattice Drift"
   },
   {
@@ -303,7 +303,7 @@
     "saturation": 0,
     "lightness": -125,
     "contrast": 45,
-    "screenshot": "oled-pink.png",
+    "screenshot": "oled-pink.jpg",
     "animationName": "Electric Hot Pink Audio Energy Rings"
   },
   {
@@ -322,8 +322,7 @@
     "saturation": 0,
     "lightness": -125,
     "contrast": 45,
-    "screenshot": "oled-emerald.png",
+    "screenshot": "oled-emerald.jpg",
     "animationName": "Radioactive Emerald Audio Energy Core"
   }
 ]
-
