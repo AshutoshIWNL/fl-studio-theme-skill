@@ -1,0 +1,72 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build Distribution Pack
+        run: |
+          python build_dist.py
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "FL Studio Themes Pack & AI Skill v1.0.0"
+          tag_name: ${{ github.ref_name || 'v1.0.0' }}
+          body: |
+            ## 🎛️ FL Studio Theme Designer & AI Skill (v1.0.0)
+
+            Welcome to the official **v1.0.0** release of `fl-studio-theme-skill`!
+
+            ### 📦 Download:
+            Download **`fl-studio-themes-pack.zip`** below for instant 1-click installation of all 12 themes and dynamic wallpapers.
+
+            ### 🎨 Shipped Themes:
+            1. **Abyssal Leviathan** — Deep-sea bioluminescent cyan/coral & jellyfish simulation
+            2. **Analog 1984** — Vintage Japanese tape deck with dual spinning cassette reels
+            3. **Cyber Blossom** — Neo-Tokyo sakura pink & drifting petal canvas
+            4. **Cyberdeck** — CRT phosphor green terminal with matrix digital rain
+            5. **Solaris** — Celestial supernova gold & breathing pulsar core
+            6. **Nurture** — Porter Robinson lush meadow with floating fireflies
+            7. **Tokyo Night** — Midnight indigo slate & ambient celestial stars
+            8. **Cyberpunk 2077** — Matte carbon with cyber yellow & 3D wireframe grid
+            9. **Synthwave 84** — Outrun neon pink/cyan with retro sunset horizon
+            10. **Catppuccin Mocha** — Pastel charcoal with drifting aurora waves
+            11. **Dracula** — Gothic violet slate with misty fog
+            12. **OLED Crimson** — Pure pitch black with pulsing audio core
+
+            ### ⚡ DAW Audio-Safety Guardrails:
+            * **30-35 FPS Delta-Time Throttled**: Zero GPU waste on 144Hz-240Hz monitors.
+            * **Object Pooling (Zero-GC Loop)**: Prevents V8 Garbage Collection freezes during ASIO audio buffers.
+            * **Visibility Listeners**: Suspends animation when FL Studio is minimized or occluded.
+            * **100% Offline**: Zero external scripts or CDNs.
+
+            ### 🚀 Quick Install:
+            1. Download `fl-studio-themes-pack.zip` below.
+            2. Extract all folders into your FL Studio Themes folder:
+               * **Windows**: `%USERPROFILE%\Documents\Image-Line\FL Studio\Settings\Themes\`
+               * **macOS**: `~/Documents/Image-Line/FL Studio/Settings/Themes/`
+            3. Open FL Studio, press **F10**, and select your theme!
+          files: |
+            dist/fl-studio-themes-pack.zip
