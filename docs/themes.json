@@ -15,7 +15,7 @@
     "saturation": -130,
     "lightness": -65,
     "contrast": 35,
-    "screenshot": "cyber-blossom.png",
+    "screenshot": "cyber-blossom.jpg",
     "animationName": "Drifting Sakura Petals"
   },
   {
@@ -34,7 +34,7 @@
     "saturation": -140,
     "lightness": -65,
     "contrast": 32,
-    "screenshot": "analog-1984.png",
+    "screenshot": "analog-1984.jpg",
     "animationName": "Dual Spinning Cassette Reels"
   },
   {
@@ -53,7 +53,7 @@
     "saturation": -40,
     "lightness": -75,
     "contrast": 35,
-    "screenshot": "abyssal-leviathan.png",
+    "screenshot": "abyssal-leviathan.jpg",
     "animationName": "Bioluminescent Jellyfish & Plankton"
   },
   {
@@ -72,7 +72,7 @@
     "saturation": -50,
     "lightness": -70,
     "contrast": 36,
-    "screenshot": "cyberdeck.png",
+    "screenshot": "cyberdeck.jpg",
     "animationName": "Matrix Digital Rain & CRT Scanlines"
   },
   {
@@ -91,7 +91,7 @@
     "saturation": -110,
     "lightness": -68,
     "contrast": 35,
-    "screenshot": "solaris.png",
+    "screenshot": "solaris.jpg",
     "animationName": "Breathing Pulsar & Coronal Rings"
   },
   {
@@ -110,7 +110,7 @@
     "saturation": 90,
     "lightness": -65,
     "contrast": 32,
-    "screenshot": "nurture.png",
+    "screenshot": "nurture.jpg",
     "animationName": "Floating Meadow Spores & Fireflies"
   },
   {
