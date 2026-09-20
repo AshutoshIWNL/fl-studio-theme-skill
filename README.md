@@ -9,6 +9,14 @@ A production-grade CLI toolkit and cross-platform **AI Agent Skill** to design, 
 
 Compatible with **Google Antigravity**, **Claude Code**, **Gemini CLI**, and **ChatGPT/Codex**.
 
+> 🌐 **Interactive Web Showcase**: Test all 12 themes and dynamic animations live in your browser at **[ashutoshiwnl.github.io/fl-studio-theme-skill](https://ashutoshiwnl.github.io/fl-studio-theme-skill/)**
+
+<p align="center">
+  <img src="docs/assets/analog-1984-preview.gif" alt="FL Studio Analog 1984 Dynamic Theme" width="850">
+  <br>
+  <em>Live in-DAW capture of <b>Analog 1984</b> with dual spinning magnetic tape reels running in FL Studio.</em>
+</p>
+
 ---
 
 ## 🎨 Shipped Theme Presets
