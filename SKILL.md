@@ -156,9 +156,9 @@ The skill includes standalone deterministic tools in `fl-studio-theme-skill/`:
      - `analog-1984`: Vintage warm parchment & VU amber with dual spinning cassette tape reels
      - `cyberdeck`: Phosphor green CRT terminal with matrix digital rain & scanline decay
      - `solaris`: Celestial supernova gold & violet with breathing pulsar core & coronal rings
-     - `ceramic-cherry`: Pure porcelain white panels with cherry pink & violet accents, dark berry typography, and drifting petal refractions
-     - `alabaster-tangerine`: Bauhaus alabaster white panels with tangerine orange & azure blue accents and drafting crosshairs
-     - `porcelain-pear`: Porcelain white panels with pear lime & emerald mint accents, dark forest typography, and drifting dew drops
+     - `alabaster-1970`: Teenage Engineering / Dieter Rams off-white panels with international safety orange accents and precision rotary dial geometry
+     - `sakura-studio`: Japanese washi paper and rose quartz studio aesthetic with metallic sakura pink, champagne gold, and floating petals
+     - `glacial-frost`: Nordic ice and crisp snow panels with glacial cyan, deep arctic cobalt, and geometric crystal lattice refractions
      - `oled-pink`: Pure pitch black OLED panels drenched in electric hot pink with pulsing audio rings
      - `oled-emerald`: Pure pitch black OLED panels drenched in radioactive emerald green with glowing spectrum aura
    - **CLI Ingestion**:

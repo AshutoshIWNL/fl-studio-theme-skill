@@ -37,9 +37,9 @@ All 17 bundled themes include balanced UI contrast, high-contrast channel rack s
 | **Analog 1984** | Vintage Japanese Tape Deck | `#FFB703` (VU Meter Amber) | Dual spinning cassette reels & reel tape counter |
 | **Cyberdeck** | CRT Phosphor Terminal | `#39FF14` (Phosphor Green) | Matrix digital rain with CRT scanline decay |
 | **Solaris** | Celestial Supernova | `#FFD166` (Pulsar Gold) | Breathing pulsar core & orbiting coronal rings |
-| **Ceramic Cherry** ⚪ | Pure Porcelain White | `#FF5493` (Cherry Pink) | Drifting cherry blossom refractions on white canvas |
-| **Alabaster Tangerine** ⚪ | Bauhaus Alabaster White | `#FF8441` (Tangerine) | Minimalist Bauhaus drafting lines & crosshairs |
-| **Porcelain Pear** ⚪ | Porcelain White & Lime | `#75E600` (Pear Lime) | Organic pear leaves & drifting dew drops |
+| **Alabaster 1970** ⚪ | Teenage Engineering / Rams Off-White | `#FF3B00` (Safety Orange) | Minimalist rotary dial & precision measurement ticks |
+| **Sakura Studio** ⚪ | Luxury Japanese Washi & Rose Quartz | `#FF6B8B` (Metallic Sakura) | Floating washi sakura petals & champagne gold dust |
+| **Glacial Frost** ⚪ | Nordic Ice & Crisp Snow | `#00B4D8` (Glacial Cyan) | Nordic hexagonal ice crystal lattice & cobalt drift |
 | **OLED Pink** 🖤 | Pitch Black & Hot Pink | `#FF1493` (Deep Hot Pink) | Electric hot pink pulsing audio energy rings |
 | **OLED Emerald** 🖤 | Pitch Black & Emerald | `#00FF66` (Electric Emerald) | Radioactive emerald audio energy core |
 

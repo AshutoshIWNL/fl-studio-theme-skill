@@ -1296,111 +1296,24 @@ def generate_solaris_html() -> str:
 
 
 
-def generate_ceramic_cherry_html() -> str:
-    """Generates an elegant light porcelain dynamic wallpaper with cherry light refractions."""
+def generate_alabaster_1970_html() -> str:
+    """Generates a Dieter Rams / Teenage Engineering industrial minimalist dynamic wallpaper."""
     return """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ceramic Cherry Dynamic Wallpaper</title>
+<title>Alabaster 1970 Dynamic Wallpaper</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: radial-gradient(circle at 50% 25%, #FFFFFF 0%, #F5F1F4 60%, #EBE4EB 100%);
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-  }
-  canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-  .watermark {
-    position: absolute; bottom: 35px; right: 45px;
-    font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
-    color: rgba(125, 1, 218, 0.22); font-weight: 700;
-    pointer-events: none; user-select: none;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  }
-</style>
-</head>
-<body>
-<canvas id="canvas"></canvas>
-<div class="watermark">Ceramic Cherry &bull; FL Studio</div>
-<script>
-  const canvas = document.getElementById('canvas');
-  const ctx = canvas.getContext('2d');
-  let w, h;
-  function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
-  window.addEventListener('resize', resize);
-  resize();
-
-  let isVisible = true;
-  document.addEventListener('visibilitychange', () => { isVisible = !document.hidden; });
-
-  const PETAL_COUNT = 32;
-  const petals = [];
-  for (let i = 0; i < PETAL_COUNT; i++) {
-    petals.push({
-      x: Math.random() * w, y: Math.random() * h,
-      size: Math.random() * 9 + 5,
-      speedY: Math.random() * 0.4 + 0.25,
-      speedX: Math.random() * 0.3 - 0.15,
-      angle: Math.random() * Math.PI * 2,
-      spin: (Math.random() - 0.5) * 0.015,
-      alpha: Math.random() * 0.25 + 0.12,
-      color: Math.random() > 0.4 ? '#FF5493' : '#7D01DA'
-    });
-  }
-
-  let lastTime = 0;
-  const fpsInterval = 1000 / 30;
-
-  function animate(now) {
-    requestAnimationFrame(animate);
-    if (!isVisible) return;
-    if (now - lastTime < fpsInterval) return;
-    lastTime = now;
-
-    ctx.clearRect(0, 0, w, h);
-    for (let p of petals) {
-      p.y += p.speedY; p.x += p.speedX; p.angle += p.spin;
-      if (p.y > h + 20) { p.y = -20; p.x = Math.random() * w; }
-      if (p.x > w + 20) p.x = -20; if (p.x < -20) p.x = w + 20;
-
-      ctx.save();
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.angle);
-      ctx.beginPath();
-      ctx.ellipse(0, 0, p.size, p.size * 0.55, 0, 0, Math.PI * 2);
-      ctx.fillStyle = p.color;
-      ctx.globalAlpha = p.alpha;
-      ctx.fill();
-      ctx.restore();
-    }
-  }
-  requestAnimationFrame(animate);
-</script>
-</body>
-</html>
-"""
-
-
-def generate_alabaster_tangerine_html() -> str:
-    """Generates a Bauhaus minimalist drafting dynamic wallpaper with tangerine & azure accents."""
-    return """<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Alabaster Tangerine Dynamic Wallpaper</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #F5F6F8 60%, #E9EBEF 100%);
+    background: radial-gradient(circle at 50% 35%, #FFFFFF 0%, #F4F4F6 55%, #E5E7EB 100%);
     overflow: hidden; width: 100vw; height: 100vh;
   }
   canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
   .watermark {
     position: absolute; bottom: 35px; right: 45px;
     font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
-    color: rgba(255, 132, 65, 0.3); font-weight: 700;
+    color: rgba(30, 32, 36, 0.28); font-weight: 700;
     pointer-events: none; user-select: none;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
@@ -1408,7 +1321,7 @@ def generate_alabaster_tangerine_html() -> str:
 </head>
 <body>
 <canvas id="canvas"></canvas>
-<div class="watermark">Alabaster Tangerine &bull; FL Studio</div>
+<div class="watermark">Alabaster 1970 &bull; Studio Edition</div>
 <script>
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
@@ -1431,41 +1344,63 @@ def generate_alabaster_tangerine_html() -> str:
     lastTime = now;
 
     ctx.clearRect(0, 0, w, h);
-    t += 0.008;
+    t += 0.006;
 
     const cx = w / 2;
-    const cy = h * 0.45;
+    const cy = h * 0.42;
 
-    // Outer subtle Bauhaus measurement circles
-    for (let i = 1; i <= 3; i++) {
-      const radius = 120 * i + Math.sin(t * 0.8 + i) * 6;
+    // Precision engineering crosshairs
+    ctx.strokeStyle = 'rgba(30, 32, 36, 0.07)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(cx - 240, cy); ctx.lineTo(cx + 240, cy);
+    ctx.moveTo(cx, cy - 240); ctx.lineTo(cx, cy + 240);
+    ctx.stroke();
+
+    // Concentric precision dials
+    for (let r = 1; r <= 3; r++) {
+      const radius = 90 * r;
       ctx.beginPath();
       ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-      ctx.strokeStyle = i === 2 ? 'rgba(255, 132, 65, 0.15)' : 'rgba(0, 118, 230, 0.1)';
+      ctx.strokeStyle = r === 2 ? 'rgba(255, 59, 0, 0.22)' : 'rgba(112, 117, 125, 0.12)';
       ctx.lineWidth = 1;
       ctx.stroke();
     }
 
-    // Crosshairs
-    ctx.strokeStyle = 'rgba(83, 69, 67, 0.08)';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(cx - 200, cy); ctx.lineTo(cx + 200, cy);
-    ctx.moveTo(cx, cy - 200); ctx.lineTo(cx, cy + 200);
-    ctx.stroke();
-
-    // Floating Tangerine indicator dots
-    for (let i = 0; i < 4; i++) {
-      const angle = t * 0.4 * (i % 2 === 0 ? 1 : -1) + (i * Math.PI / 2);
-      const dist = 140 + i * 40;
-      const x = cx + Math.cos(angle) * dist;
-      const y = cy + Math.sin(angle) * dist;
+    // Radial dial tick marks (60 ticks like an analog chronometer / rotary dial)
+    for (let i = 0; i < 60; i++) {
+      const angle = (i * Math.PI / 30) + t * 0.2;
+      const isMajor = i % 5 === 0;
+      const r1 = 180;
+      const r2 = isMajor ? 192 : 186;
       ctx.beginPath();
-      ctx.arc(x, y, 3, 0, Math.PI * 2);
-      ctx.fillStyle = i % 2 === 0 ? '#FF8441' : '#0076E6';
-      ctx.globalAlpha = 0.45;
-      ctx.fill();
+      ctx.moveTo(cx + Math.cos(angle) * r1, cy + Math.sin(angle) * r1);
+      ctx.lineTo(cx + Math.cos(angle) * r2, cy + Math.sin(angle) * r2);
+      ctx.strokeStyle = isMajor ? 'rgba(255, 59, 0, 0.45)' : 'rgba(112, 117, 125, 0.18)';
+      ctx.lineWidth = isMajor ? 1.5 : 1;
+      ctx.stroke();
     }
+
+    // Rotating International Safety Orange indicator beacon
+    const orangeAngle = t * 0.5;
+    const orangeRadius = 180;
+    const ox = cx + Math.cos(orangeAngle) * orangeRadius;
+    const oy = cy + Math.sin(orangeAngle) * orangeRadius;
+    ctx.beginPath();
+    ctx.arc(ox, oy, 4, 0, Math.PI * 2);
+    ctx.fillStyle = '#FF3B00';
+    ctx.fill();
+
+    // Floating titanium reference dot
+    const amberAngle = -t * 0.35 + Math.PI;
+    const ax = cx + Math.cos(amberAngle) * 90;
+    const ay = cy + Math.sin(amberAngle) * 90;
+    ctx.beginPath();
+    ctx.arc(ax, ay, 3, 0, Math.PI * 2);
+    ctx.fillStyle = '#FFB703';
+    ctx.globalAlpha = 0.65;
+    ctx.fill();
+    ctx.globalAlpha = 1.0;
   }
   requestAnimationFrame(animate);
 </script>
@@ -1474,24 +1409,24 @@ def generate_alabaster_tangerine_html() -> str:
 """
 
 
-def generate_porcelain_pear_html() -> str:
-    """Generates an organic porcelain white dynamic wallpaper with gentle pear leaves and dew drops."""
+def generate_sakura_studio_html() -> str:
+    """Generates a luxury Japanese washi paper dynamic wallpaper with rose quartz & champagne gold accents."""
     return """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Porcelain Pear Dynamic Wallpaper</title>
+<title>Sakura Studio Dynamic Wallpaper</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #F5F9F5 60%, #E9F0E9 100%);
+    background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #FAF5F7 55%, #EFE8EC 100%);
     overflow: hidden; width: 100vw; height: 100vh;
   }
   canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
   .watermark {
     position: absolute; bottom: 35px; right: 45px;
     font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
-    color: rgba(117, 230, 0, 0.28); font-weight: 700;
+    color: rgba(139, 38, 74, 0.25); font-weight: 700;
     pointer-events: none; user-select: none;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
@@ -1499,7 +1434,7 @@ def generate_porcelain_pear_html() -> str:
 </head>
 <body>
 <canvas id="canvas"></canvas>
-<div class="watermark">Porcelain Pear &bull; FL Studio</div>
+<div class="watermark">Sakura Studio &bull; FL Studio</div>
 <script>
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
@@ -1511,15 +1446,18 @@ def generate_porcelain_pear_html() -> str:
   let isVisible = true;
   document.addEventListener('visibilitychange', () => { isVisible = !document.hidden; });
 
-  const DROP_COUNT = 30;
-  const drops = [];
-  for (let i = 0; i < DROP_COUNT; i++) {
-    drops.push({
+  const PETAL_COUNT = 34;
+  const petals = [];
+  for (let i = 0; i < PETAL_COUNT; i++) {
+    petals.push({
       x: Math.random() * w, y: Math.random() * h,
-      radius: Math.random() * 3 + 1.5,
-      speedY: Math.random() * 0.35 + 0.15,
-      alpha: Math.random() * 0.25 + 0.1,
-      color: Math.random() > 0.4 ? '#75E600' : '#3BE65C'
+      size: Math.random() * 8 + 4,
+      speedY: Math.random() * 0.35 + 0.18,
+      speedX: Math.random() * 0.25 - 0.12,
+      angle: Math.random() * Math.PI * 2,
+      spin: (Math.random() - 0.5) * 0.012,
+      alpha: Math.random() * 0.28 + 0.12,
+      color: Math.random() > 0.3 ? '#FF6B8B' : '#D4AF37'
     });
   }
 
@@ -1533,15 +1471,118 @@ def generate_porcelain_pear_html() -> str:
     lastTime = now;
 
     ctx.clearRect(0, 0, w, h);
-    for (let d of drops) {
-      d.y -= d.speedY;
-      if (d.y < -10) { d.y = h + 10; d.x = Math.random() * w; }
+    for (let p of petals) {
+      p.y += p.speedY; p.x += p.speedX; p.angle += p.spin;
+      if (p.y > h + 20) { p.y = -20; p.x = Math.random() * w; }
+      if (p.x > w + 20) p.x = -20; if (p.x < -20) p.x = w + 20;
 
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.angle);
       ctx.beginPath();
-      ctx.arc(d.x, d.y, d.radius, 0, Math.PI * 2);
-      ctx.fillStyle = d.color;
-      ctx.globalAlpha = d.alpha;
+      ctx.ellipse(0, 0, p.size, p.size * 0.5, 0, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
       ctx.fill();
+      ctx.restore();
+    }
+  }
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>
+"""
+
+
+def generate_glacial_frost_html() -> str:
+    """Generates a Nordic ice and arctic cobalt dynamic wallpaper with clean crystal geometry."""
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glacial Frost Dynamic Wallpaper</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #F0F6FA 55%, #E2ECF3 100%);
+    overflow: hidden; width: 100vw; height: 100vh;
+  }
+  canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  .watermark {
+    position: absolute; bottom: 35px; right: 45px;
+    font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(0, 86, 179, 0.28); font-weight: 700;
+    pointer-events: none; user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div class="watermark">Glacial Frost &bull; Nordic Edition</div>
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h;
+  function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let isVisible = true;
+  document.addEventListener('visibilitychange', () => { isVisible = !document.hidden; });
+
+  const CRYSTALS = 28;
+  const crystals = [];
+  for (let i = 0; i < CRYSTALS; i++) {
+    crystals.push({
+      x: Math.random() * w, y: Math.random() * h,
+      size: Math.random() * 4 + 2,
+      speedY: Math.random() * 0.3 + 0.12,
+      alpha: Math.random() * 0.3 + 0.12,
+      color: Math.random() > 0.4 ? '#00B4D8' : '#0056B3'
+    });
+  }
+
+  let t = 0;
+  let lastTime = 0;
+  const fpsInterval = 1000 / 30;
+
+  function animate(now) {
+    requestAnimationFrame(animate);
+    if (!isVisible) return;
+    if (now - lastTime < fpsInterval) return;
+    lastTime = now;
+
+    ctx.clearRect(0, 0, w, h);
+    t += 0.008;
+
+    const cx = w / 2;
+    const cy = h * 0.42;
+
+    // Geometric Nordic ice lattice rings
+    for (let r = 1; r <= 3; r++) {
+      const radius = 100 * r + Math.sin(t + r) * 4;
+      ctx.beginPath();
+      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+      ctx.strokeStyle = r === 2 ? 'rgba(0, 180, 216, 0.2)' : 'rgba(0, 86, 179, 0.1)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    // Drifting ice crystals (diamond shards)
+    for (let c of crystals) {
+      c.y += c.speedY;
+      if (c.y > h + 10) { c.y = -10; c.x = Math.random() * w; }
+
+      ctx.save();
+      ctx.translate(c.x, c.y);
+      ctx.rotate(Math.PI / 4);
+      ctx.beginPath();
+      ctx.rect(-c.size / 2, -c.size / 2, c.size, c.size);
+      ctx.fillStyle = c.color;
+      ctx.globalAlpha = c.alpha;
+      ctx.fill();
+      ctx.restore();
     }
   }
   requestAnimationFrame(animate);
@@ -1561,7 +1602,7 @@ def generate_oled_pink_html() -> str:
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: #040205;
+    background: #040103;
     overflow: hidden; width: 100vw; height: 100vh;
   }
   canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
@@ -1659,7 +1700,7 @@ def generate_oled_emerald_html() -> str:
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: #020603;
+    background: #010402;
     overflow: hidden; width: 100vw; height: 100vh;
   }
   canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
@@ -1763,12 +1804,12 @@ def get_html_for_preset(preset_key: str) -> str | None:
         "analog": generate_analog_1984_html,
         "cyberdeck": generate_cyberdeck_html,
         "solaris": generate_solaris_html,
-        "ceramic-cherry": generate_ceramic_cherry_html,
-        "light-cherry": generate_ceramic_cherry_html,
-        "alabaster-tangerine": generate_alabaster_tangerine_html,
-        "light-tangerine": generate_alabaster_tangerine_html,
-        "porcelain-pear": generate_porcelain_pear_html,
-        "light-pear": generate_porcelain_pear_html,
+        "alabaster-1970": generate_alabaster_1970_html,
+        "alabaster": generate_alabaster_1970_html,
+        "sakura-studio": generate_sakura_studio_html,
+        "sakura": generate_sakura_studio_html,
+        "glacial-frost": generate_glacial_frost_html,
+        "glacial": generate_glacial_frost_html,
         "oled-pink": generate_oled_pink_html,
         "oled-emerald": generate_oled_emerald_html,
     }

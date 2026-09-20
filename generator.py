@@ -785,94 +785,94 @@ def get_builtin_presets() -> Dict[str, Dict[str, Any]]:
                 "#F3722C", "#F8961E", "#F9844A", "#F9C74F",
             ],
         },
-        "ceramic-cherry": {
-            "name": "Ceramic Cherry",
+        "alabaster-1970": {
+            "name": "Alabaster 1970",
             "light_mode": 1,
             "hue": 0,
-            "saturation": -251,         # Pure porcelain white panels
-            "lightness": 152,           # High positive lightness (white surface)
-            "contrast": 64,             # High contrast for crisp borders against white
+            "saturation": -251,         # Pure desaturated ceramic panels (Teenage Engineering / Rams aesthetic)
+            "lightness": 154,           # Bright ceramic off-white surface
+            "contrast": 64,             # High contrast bevels for sharp panel definition
             "text_brightness": -226,    # Inverts text to dark graphite
-            "text_color": "#59454E",    # Dark Berry Charcoal
-            "selected": "#FF5493",      # Cherry Pink
-            "highlight": "#7D01DA",     # Violet
-            "mute": "#9F00FF",          # Deep Purple
-            "option": "#8F22FF",        # Purple
-            "step_even": "#BEBDBB",     # Warm Light Slate
-            "step_odd": "#7B3EC6",      # Violet Step
-            "pr_grid_back": "#4E4434",
-            "pl_grid_back": "#E8E8E8",  # Crisp light silver playlist grid
-            "ee_grid_back": "#4E4434",
+            "text_color": "#1E2024",    # Matte Deep Carbon text (WCAG AAA contrast against #F4F4F6)
+            "selected": "#FF3B00",      # International Safety Orange (Dieter Rams / OP-1 accent)
+            "highlight": "#70757D",     # Brushed Titanium Slate
+            "mute": "#D90429",          # Industrial Emergency Red
+            "option": "#FFB703",        # Precision Indicator Amber
+            "step_even": "#D8DCE0",     # Brushed Titanium Pearl
+            "step_odd": "#1E2024",      # Matte Graphite (10.5:1 contrast vs StepEven)
+            "pr_grid_back": "#E0E3E8",
+            "pl_grid_back": "#E8E8E8",  # Clean silver playlist grid
+            "ee_grid_back": "#E0E3E8",
             "back_pic_filename": "FL STUDIO.png",
             "back_html_filename": "Default.txt",
-            "back_color": "#F8F5F8",
-            "meters": ["#6010AD", "#7A0AE2", "#770ADC", "#A74DFC", "#D4ADFF", "#FAF4FF"],
-            "wave_colors": ["#6010AD", "#7A0AE2", "#770ADC", "#A74DFC", "#D4ADFF", "#FAF4FF"],
+            "back_color": "#F4F4F6",    # Alabaster ceramic canvas
+            "meters": ["#70757D", "#495057", "#FFB703", "#FF8500", "#FF3B00", "#D90429"],
+            "wave_colors": ["#70757D", "#495057", "#FFB703", "#FF8500", "#FF3B00", "#D90429"],
             "note_colors": [
-                "#FF5493", "#7D01DA", "#9F00FF", "#8F22FF",
-                "#A74DFC", "#C77DFF", "#E0AAFF", "#7B3EC6",
-                "#5A189A", "#3C096C", "#240046", "#FF758F",
-                "#FF8FA3", "#FFB3C1", "#D4ADFF", "#FAF4FF",
+                "#FF3B00", "#70757D", "#FFB703", "#0077B6",
+                "#D90429", "#2B2E33", "#0096C7", "#E85D04",
+                "#48CAE4", "#F48C06", "#FAA307", "#023E8A",
+                "#343A40", "#6C757D", "#ADB5BD", "#D8DCE0",
             ],
         },
-        "alabaster-tangerine": {
-            "name": "Alabaster Tangerine",
+        "sakura-studio": {
+            "name": "Sakura Studio",
             "light_mode": 1,
             "hue": 0,
-            "saturation": -251,
-            "lightness": 157,
-            "contrast": 64,
-            "text_brightness": -226,
-            "text_color": "#534543",    # Dark Warm Umber
-            "selected": "#FF8441",      # Tangerine Orange
-            "highlight": "#0076E6",     # Azure Blue
-            "mute": "#006CF2",
-            "option": "#006CF2",
-            "step_even": "#BEBDBB",     # Warm Light Slate
-            "step_odd": "#1A75E7",      # Azure Step
-            "pr_grid_back": "#4E4434",
-            "pl_grid_back": "#E8E8E8",
-            "ee_grid_back": "#4E4434",
+            "saturation": -250,         # Soft warm washi porcelain
+            "lightness": 152,           # Warm paper white surface
+            "contrast": 64,             # Crisp panel separation
+            "text_brightness": -226,    # Inverts text to dark espresso
+            "text_color": "#2A1D22",    # Dark Espresso Berry text (>12:1 contrast against #FAF5F7)
+            "selected": "#FF6B8B",      # Metallic Sakura Pink
+            "highlight": "#D4AF37",     # Champagne Gold
+            "mute": "#8B264A",          # Deep Velvet Berry
+            "option": "#E88CA6",        # Morning Blossom Rose
+            "step_even": "#E8DFE4",     # Soft Silk Pearl
+            "step_odd": "#4A2533",      # Espresso Plum (>7:1 contrast vs StepEven)
+            "pr_grid_back": "#ECE2E7",
+            "pl_grid_back": "#EFE8EC",
+            "ee_grid_back": "#ECE2E7",
             "back_pic_filename": "FL STUDIO.png",
             "back_html_filename": "Default.txt",
-            "back_color": "#F8F6F4",
-            "meters": ["#0073EA", "#3091FF", "#5B94FF", "#3D85FF", "#94BEFF", "#E8F2FF"],
-            "wave_colors": ["#0073EA", "#3091FF", "#5B94FF", "#3D85FF", "#94BEFF", "#E8F2FF"],
+            "back_color": "#FAF5F7",    # Warm Washi Paper canvas
+            "meters": ["#D4AF37", "#FFB3C6", "#FF8EA3", "#FF6B8B", "#C84B6E", "#8B264A"],
+            "wave_colors": ["#D4AF37", "#FFB3C6", "#FF8EA3", "#FF6B8B", "#C84B6E", "#8B264A"],
             "note_colors": [
-                "#FF8441", "#0076E6", "#006CF2", "#1A75E7",
-                "#3091FF", "#5B94FF", "#FF9F68", "#FFB285",
-                "#FFA07A", "#FF7F50", "#0056B3", "#003D82",
-                "#94BEFF", "#CCE0FF", "#FFCBB0", "#E8F2FF",
+                "#FF6B8B", "#D4AF37", "#FF8EA3", "#8B264A",
+                "#C84B6E", "#E88CA6", "#B388EB", "#7209B7",
+                "#FFB3C6", "#F72585", "#4CC9F0", "#3A0CA3",
+                "#DDA15E", "#BC6C25", "#5E503F", "#2A1D22",
             ],
         },
-        "porcelain-pear": {
-            "name": "Porcelain Pear",
+        "glacial-frost": {
+            "name": "Glacial Frost",
             "light_mode": 1,
             "hue": 0,
-            "saturation": -251,
-            "lightness": 153,
+            "saturation": -250,         # Crisp Scandinavian snow porcelain
+            "lightness": 153,           # Crisp alpine snow surface
             "contrast": 64,
-            "text_brightness": -226,
-            "text_color": "#46584D",    # Dark Forest Charcoal
-            "selected": "#75E600",      # Pear Lime
-            "highlight": "#21EC00",     # Electric Lime
-            "mute": "#3BE65C",          # Emerald Mint
-            "option": "#3BE65C",
-            "step_even": "#BEBDBB",
-            "step_odd": "#1E822E",      # Crisp Forest Green Step
-            "pr_grid_back": "#4E4434",
-            "pl_grid_back": "#E8E8E8",
-            "ee_grid_back": "#4E4434",
+            "text_brightness": -226,    # Inverts text to deep arctic obsidian
+            "text_color": "#0A192F",    # Deep Arctic Obsidian / Nordic Navy (>15:1 contrast against #F0F6FA)
+            "selected": "#00B4D8",      # Glacial Cyan
+            "highlight": "#0056B3",     # Royal Arctic Cobalt
+            "mute": "#E63946",          # Arctic Beacon Crimson
+            "option": "#48CAE4",        # Iceberg Cyan
+            "step_even": "#D5E4EE",     # Polar Silver Pearl
+            "step_odd": "#0A2540",      # Deep Nordic Navy (>8:1 contrast vs StepEven)
+            "pr_grid_back": "#DFEBF4",
+            "pl_grid_back": "#E5EFF6",
+            "ee_grid_back": "#DFEBF4",
             "back_pic_filename": "FL STUDIO.png",
             "back_html_filename": "Default.txt",
-            "back_color": "#F6FAF6",
-            "meters": ["#0AE61B", "#63EE7B", "#64E487", "#30FF9F", "#5BFFC6", "#DBFFF1"],
-            "wave_colors": ["#0AE61B", "#63EE7B", "#64E487", "#30FF9F", "#5BFFC6", "#DBFFF1"],
+            "back_color": "#F0F6FA",    # Crisp Snow canvas
+            "meters": ["#0056B3", "#0077B6", "#0096C7", "#00B4D8", "#48CAE4", "#E63946"],
+            "wave_colors": ["#0056B3", "#0077B6", "#0096C7", "#00B4D8", "#48CAE4", "#E63946"],
             "note_colors": [
-                "#75E600", "#21EC00", "#3BE65C", "#33CE43",
-                "#0AE61B", "#63EE7B", "#30FF9F", "#5BFFC6",
-                "#8CEE00", "#A6FF2E", "#00C853", "#009624",
-                "#A7F3D0", "#D1FAE5", "#E8F5E9", "#DBFFF1",
+                "#00B4D8", "#0056B3", "#48CAE4", "#0077B6",
+                "#90E0EF", "#03045E", "#0096C7", "#CAF0F8",
+                "#2EC4B6", "#E71D36", "#FF9F1C", "#011627",
+                "#3A86FF", "#8338EC", "#5BC0BE", "#0A192F",
             ],
         },
         "oled-pink": {
@@ -886,18 +886,18 @@ def get_builtin_presets() -> Dict[str, Dict[str, Any]]:
             "text_color": "#FFF0F5",    # Snow Blush White
             "selected": "#FF1493",      # Deep Electric Hot Pink
             "highlight": "#FF69B4",     # Hot Pink
-            "mute": "#FF007F",          # Neon Rose
-            "option": "#FF1493",
-            "step_even": "#3D1B2E",     # Dark Rose Charcoal
-            "step_odd": "#12080D",      # Obsidian Pink Shadow
+            "mute": "#FF007F",          # Neon Rose Warning
+            "option": "#FF2A85",        # Cyber Magenta
+            "step_even": "#3D142A",     # Obsidian Berry
+            "step_odd": "#12050D",      # Pitch Black Shadow
             "pr_grid_back": "#10060B",
             "pl_grid_back": "#10060B",
             "ee_grid_back": "#10060B",
             "back_pic_filename": "FL STUDIO dark.png",
             "back_html_filename": "Default.txt",
-            "back_color": "#050204",
-            "meters": ["#4A152B", "#7D1D45", "#B8145E", "#FF1493", "#FF69B4", "#FF007F"],
-            "wave_colors": ["#4A152B", "#7D1D45", "#B8145E", "#FF1493", "#FF69B4", "#FF007F"],
+            "back_color": "#050104",
+            "meters": ["#4A0D2B", "#7D1548", "#BA1368", "#FF1493", "#FF69B4", "#FF007F"],
+            "wave_colors": ["#4A0D2B", "#7D1548", "#BA1368", "#FF1493", "#FF69B4", "#FF007F"],
             "note_colors": [
                 "#FF1493", "#FF69B4", "#FF007F", "#FF2A85",
                 "#FF70A6", "#E0218A", "#FF5C8A", "#D90368",
@@ -916,18 +916,18 @@ def get_builtin_presets() -> Dict[str, Dict[str, Any]]:
             "text_color": "#F0FFF4",    # Mint White
             "selected": "#00FF66",      # Radioactive Electric Emerald
             "highlight": "#39FF14",     # Phosphor Lime
-            "mute": "#00CC52",          # Emerald Warning
-            "option": "#00FF66",
-            "step_even": "#152618",     # Obsidian Emerald Charcoal
-            "step_odd": "#08120A",      # Trench Black
+            "mute": "#FF3344",          # Laser Red Mute for immediate visual safety
+            "option": "#00F5A0",        # Emerald Mint
+            "step_even": "#122A17",     # Obsidian Forest
+            "step_odd": "#050F07",      # Pitch Emerald Shadow
             "pr_grid_back": "#050D06",
             "pl_grid_back": "#050D06",
             "ee_grid_back": "#050D06",
             "back_pic_filename": "FL STUDIO dark.png",
             "back_html_filename": "Default.txt",
-            "back_color": "#020603",
-            "meters": ["#103518", "#1B5E20", "#2E7D32", "#00E676", "#00FF66", "#76FF03"],
-            "wave_colors": ["#103518", "#1B5E20", "#2E7D32", "#00E676", "#00FF66", "#76FF03"],
+            "back_color": "#010502",
+            "meters": ["#0D3316", "#155424", "#1F8538", "#00CC52", "#00FF66", "#39FF14"],
+            "wave_colors": ["#0D3316", "#155424", "#1F8538", "#00CC52", "#00FF66", "#39FF14"],
             "note_colors": [
                 "#00FF66", "#39FF14", "#00E676", "#76FF03",
                 "#64DD17", "#00C853", "#69F0AE", "#B9F6CA",
