@@ -32,6 +32,7 @@ jobs:
         python test_generator.py -v
         python test_skill_workflow.py -v
         python test_validator.py -v
+        python test_showcase.py -v
 
     - name: Test Distribution Packager
       run: |
