@@ -22,3 +22,9 @@ ehthumbs.db
 env/
 venv/
 ENV/
+
+# Internal roadmaps & scratch files
+ROADMAP_V2.md
+.roadmap/
+*.draft.md
+
