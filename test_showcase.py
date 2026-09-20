@@ -17,7 +17,7 @@ class TestShowcaseE2E(unittest.TestCase):
         with open(themes_file, "r", encoding="utf-8") as f:
             themes = json.load(f)
 
-        self.assertEqual(len(themes), 12, f"Expected 12 themes, found {len(themes)}")
+        self.assertEqual(len(themes), 17, f"Expected 17 themes, found {len(themes)}")
 
         required_keys = [
             "id", "name", "tagline", "description", "accent", "highlight",
@@ -38,7 +38,7 @@ class TestShowcaseE2E(unittest.TestCase):
 
         self.assertIn("window.THEME_ANIMATIONS =", content)
 
-        # Ensure all 12 themes from themes.json have corresponding animations
+        # Ensure all 17 themes from themes.json have corresponding animations
         with open(self.docs_dir / "themes.json", "r", encoding="utf-8") as f:
             themes = json.load(f)
 
@@ -84,7 +84,7 @@ class TestShowcaseE2E(unittest.TestCase):
                 with urllib.request.urlopen(f"http://127.0.0.1:{port}/themes.json") as resp:
                     self.assertEqual(resp.status, 200)
                     data = json.loads(resp.read().decode("utf-8"))
-                    self.assertEqual(len(data), 12)
+                    self.assertEqual(len(data), 17)
 
                 # 3. Fetch animations.js
                 with urllib.request.urlopen(f"http://127.0.0.1:{port}/animations.js") as resp:

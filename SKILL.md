@@ -156,6 +156,11 @@ The skill includes standalone deterministic tools in `fl-studio-theme-skill/`:
      - `analog-1984`: Vintage warm parchment & VU amber with dual spinning cassette tape reels
      - `cyberdeck`: Phosphor green CRT terminal with matrix digital rain & scanline decay
      - `solaris`: Celestial supernova gold & violet with breathing pulsar core & coronal rings
+     - `ceramic-cherry`: Pure porcelain white panels with cherry pink & violet accents, dark berry typography, and drifting petal refractions
+     - `alabaster-tangerine`: Bauhaus alabaster white panels with tangerine orange & azure blue accents and drafting crosshairs
+     - `porcelain-pear`: Porcelain white panels with pear lime & emerald mint accents, dark forest typography, and drifting dew drops
+     - `oled-pink`: Pure pitch black OLED panels drenched in electric hot pink with pulsing audio rings
+     - `oled-emerald`: Pure pitch black OLED panels drenched in radioactive emerald green with glowing spectrum aura
    - **CLI Ingestion**:
      ```bash
      # Direct custom theme with bespoke dynamic HTML string

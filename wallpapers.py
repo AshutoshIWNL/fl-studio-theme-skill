@@ -1295,6 +1295,455 @@ def generate_solaris_html() -> str:
 """
 
 
+
+def generate_ceramic_cherry_html() -> str:
+    """Generates an elegant light porcelain dynamic wallpaper with cherry light refractions."""
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ceramic Cherry Dynamic Wallpaper</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: radial-gradient(circle at 50% 25%, #FFFFFF 0%, #F5F1F4 60%, #EBE4EB 100%);
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+  canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  .watermark {
+    position: absolute; bottom: 35px; right: 45px;
+    font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(125, 1, 218, 0.22); font-weight: 700;
+    pointer-events: none; user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div class="watermark">Ceramic Cherry &bull; FL Studio</div>
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h;
+  function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let isVisible = true;
+  document.addEventListener('visibilitychange', () => { isVisible = !document.hidden; });
+
+  const PETAL_COUNT = 32;
+  const petals = [];
+  for (let i = 0; i < PETAL_COUNT; i++) {
+    petals.push({
+      x: Math.random() * w, y: Math.random() * h,
+      size: Math.random() * 9 + 5,
+      speedY: Math.random() * 0.4 + 0.25,
+      speedX: Math.random() * 0.3 - 0.15,
+      angle: Math.random() * Math.PI * 2,
+      spin: (Math.random() - 0.5) * 0.015,
+      alpha: Math.random() * 0.25 + 0.12,
+      color: Math.random() > 0.4 ? '#FF5493' : '#7D01DA'
+    });
+  }
+
+  let lastTime = 0;
+  const fpsInterval = 1000 / 30;
+
+  function animate(now) {
+    requestAnimationFrame(animate);
+    if (!isVisible) return;
+    if (now - lastTime < fpsInterval) return;
+    lastTime = now;
+
+    ctx.clearRect(0, 0, w, h);
+    for (let p of petals) {
+      p.y += p.speedY; p.x += p.speedX; p.angle += p.spin;
+      if (p.y > h + 20) { p.y = -20; p.x = Math.random() * w; }
+      if (p.x > w + 20) p.x = -20; if (p.x < -20) p.x = w + 20;
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.angle);
+      ctx.beginPath();
+      ctx.ellipse(0, 0, p.size, p.size * 0.55, 0, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>
+"""
+
+
+def generate_alabaster_tangerine_html() -> str:
+    """Generates a Bauhaus minimalist drafting dynamic wallpaper with tangerine & azure accents."""
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alabaster Tangerine Dynamic Wallpaper</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #F5F6F8 60%, #E9EBEF 100%);
+    overflow: hidden; width: 100vw; height: 100vh;
+  }
+  canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  .watermark {
+    position: absolute; bottom: 35px; right: 45px;
+    font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(255, 132, 65, 0.3); font-weight: 700;
+    pointer-events: none; user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div class="watermark">Alabaster Tangerine &bull; FL Studio</div>
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h;
+  function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let isVisible = true;
+  document.addEventListener('visibilitychange', () => { isVisible = !document.hidden; });
+
+  let t = 0;
+  let lastTime = 0;
+  const fpsInterval = 1000 / 30;
+
+  function animate(now) {
+    requestAnimationFrame(animate);
+    if (!isVisible) return;
+    if (now - lastTime < fpsInterval) return;
+    lastTime = now;
+
+    ctx.clearRect(0, 0, w, h);
+    t += 0.008;
+
+    const cx = w / 2;
+    const cy = h * 0.45;
+
+    // Outer subtle Bauhaus measurement circles
+    for (let i = 1; i <= 3; i++) {
+      const radius = 120 * i + Math.sin(t * 0.8 + i) * 6;
+      ctx.beginPath();
+      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+      ctx.strokeStyle = i === 2 ? 'rgba(255, 132, 65, 0.15)' : 'rgba(0, 118, 230, 0.1)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    // Crosshairs
+    ctx.strokeStyle = 'rgba(83, 69, 67, 0.08)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(cx - 200, cy); ctx.lineTo(cx + 200, cy);
+    ctx.moveTo(cx, cy - 200); ctx.lineTo(cx, cy + 200);
+    ctx.stroke();
+
+    // Floating Tangerine indicator dots
+    for (let i = 0; i < 4; i++) {
+      const angle = t * 0.4 * (i % 2 === 0 ? 1 : -1) + (i * Math.PI / 2);
+      const dist = 140 + i * 40;
+      const x = cx + Math.cos(angle) * dist;
+      const y = cy + Math.sin(angle) * dist;
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fillStyle = i % 2 === 0 ? '#FF8441' : '#0076E6';
+      ctx.globalAlpha = 0.45;
+      ctx.fill();
+    }
+  }
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>
+"""
+
+
+def generate_porcelain_pear_html() -> str:
+    """Generates an organic porcelain white dynamic wallpaper with gentle pear leaves and dew drops."""
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Porcelain Pear Dynamic Wallpaper</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #F5F9F5 60%, #E9F0E9 100%);
+    overflow: hidden; width: 100vw; height: 100vh;
+  }
+  canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  .watermark {
+    position: absolute; bottom: 35px; right: 45px;
+    font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(117, 230, 0, 0.28); font-weight: 700;
+    pointer-events: none; user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div class="watermark">Porcelain Pear &bull; FL Studio</div>
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h;
+  function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let isVisible = true;
+  document.addEventListener('visibilitychange', () => { isVisible = !document.hidden; });
+
+  const DROP_COUNT = 30;
+  const drops = [];
+  for (let i = 0; i < DROP_COUNT; i++) {
+    drops.push({
+      x: Math.random() * w, y: Math.random() * h,
+      radius: Math.random() * 3 + 1.5,
+      speedY: Math.random() * 0.35 + 0.15,
+      alpha: Math.random() * 0.25 + 0.1,
+      color: Math.random() > 0.4 ? '#75E600' : '#3BE65C'
+    });
+  }
+
+  let lastTime = 0;
+  const fpsInterval = 1000 / 30;
+
+  function animate(now) {
+    requestAnimationFrame(animate);
+    if (!isVisible) return;
+    if (now - lastTime < fpsInterval) return;
+    lastTime = now;
+
+    ctx.clearRect(0, 0, w, h);
+    for (let d of drops) {
+      d.y -= d.speedY;
+      if (d.y < -10) { d.y = h + 10; d.x = Math.random() * w; }
+
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.radius, 0, Math.PI * 2);
+      ctx.fillStyle = d.color;
+      ctx.globalAlpha = d.alpha;
+      ctx.fill();
+    }
+  }
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>
+"""
+
+
+def generate_oled_pink_html() -> str:
+    """Generates an uncompromising electric hot pink audio pulse dynamic wallpaper."""
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OLED Pink Dynamic Wallpaper</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #040205;
+    overflow: hidden; width: 100vw; height: 100vh;
+  }
+  canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  .watermark {
+    position: absolute; bottom: 35px; right: 45px;
+    font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(255, 20, 147, 0.35); font-weight: 700;
+    pointer-events: none; user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div class="watermark">OLED Pink &bull; FL Studio</div>
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h;
+  function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let isVisible = true;
+  document.addEventListener('visibilitychange', () => { isVisible = !document.hidden; });
+
+  const PARTICLES = 35;
+  const particles = [];
+  for (let i = 0; i < PARTICLES; i++) {
+    particles.push({
+      x: Math.random() * w, y: Math.random() * h,
+      size: Math.random() * 2 + 0.8,
+      speed: Math.random() * 0.4 + 0.1,
+      alpha: Math.random() * 0.5 + 0.2,
+      color: Math.random() > 0.3 ? '#FF1493' : '#FF69B4'
+    });
+  }
+
+  let t = 0;
+  let lastTime = 0;
+  const fpsInterval = 1000 / 30;
+
+  function animate(now) {
+    requestAnimationFrame(animate);
+    if (!isVisible) return;
+    if (now - lastTime < fpsInterval) return;
+    lastTime = now;
+
+    ctx.clearRect(0, 0, w, h);
+    t += 0.02;
+
+    const cx = w / 2;
+    const cy = h * 0.42;
+
+    // Glowing electric pink audio energy rings
+    for (let r = 1; r <= 3; r++) {
+      const pulse = Math.sin(t + r) * 10;
+      const radius = 70 * r + pulse;
+      ctx.beginPath();
+      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(255, 20, 147, ${0.35 / r})`;
+      ctx.lineWidth = 1.5;
+      ctx.shadowColor = '#FF1493';
+      ctx.shadowBlur = 12;
+      ctx.stroke();
+    }
+
+    // Floating stardust
+    for (let p of particles) {
+      p.y -= p.speed;
+      if (p.y < 0) { p.y = h; p.x = Math.random() * w; }
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
+      ctx.shadowBlur = 6;
+      ctx.shadowColor = p.color;
+      ctx.fill();
+    }
+  }
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>
+"""
+
+
+def generate_oled_emerald_html() -> str:
+    """Generates a deep carbon black dynamic wallpaper with radioactive emerald green audio aura."""
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OLED Emerald Dynamic Wallpaper</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #020603;
+    overflow: hidden; width: 100vw; height: 100vh;
+  }
+  canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  .watermark {
+    position: absolute; bottom: 35px; right: 45px;
+    font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(0, 255, 102, 0.3); font-weight: 700;
+    pointer-events: none; user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div class="watermark">OLED Emerald &bull; FL Studio</div>
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h;
+  function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let isVisible = true;
+  document.addEventListener('visibilitychange', () => { isVisible = !document.hidden; });
+
+  const BEAMS = 30;
+  const embers = [];
+  for (let i = 0; i < BEAMS; i++) {
+    embers.push({
+      x: Math.random() * w, y: Math.random() * h,
+      size: Math.random() * 2.5 + 0.8,
+      speed: Math.random() * 0.35 + 0.1,
+      alpha: Math.random() * 0.5 + 0.2,
+      color: Math.random() > 0.4 ? '#00FF66' : '#39FF14'
+    });
+  }
+
+  let t = 0;
+  let lastTime = 0;
+  const fpsInterval = 1000 / 30;
+
+  function animate(now) {
+    requestAnimationFrame(animate);
+    if (!isVisible) return;
+    if (now - lastTime < fpsInterval) return;
+    lastTime = now;
+
+    ctx.clearRect(0, 0, w, h);
+    t += 0.015;
+
+    const cx = w / 2;
+    const cy = h * 0.42;
+
+    // Glowing emerald energy core
+    const coreGrad = ctx.createRadialGradient(cx, cy, 10, cx, cy, 220);
+    coreGrad.addColorStop(0, 'rgba(0, 255, 102, 0.2)');
+    coreGrad.addColorStop(0.5, 'rgba(0, 255, 102, 0.06)');
+    coreGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    ctx.fillStyle = coreGrad;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 220, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Floating radioactive embers
+    for (let e of embers) {
+      e.y -= e.speed;
+      if (e.y < 0) { e.y = h; e.x = Math.random() * w; }
+      ctx.beginPath();
+      ctx.arc(e.x, e.y, e.size, 0, Math.PI * 2);
+      ctx.fillStyle = e.color;
+      ctx.globalAlpha = e.alpha;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = e.color;
+      ctx.fill();
+    }
+  }
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>
+"""
+
+
 def get_html_for_preset(preset_key: str) -> str | None:
     """Returns dynamic HTML string for a recognized preset."""
     mapping = {
@@ -1314,8 +1763,17 @@ def get_html_for_preset(preset_key: str) -> str | None:
         "analog": generate_analog_1984_html,
         "cyberdeck": generate_cyberdeck_html,
         "solaris": generate_solaris_html,
+        "ceramic-cherry": generate_ceramic_cherry_html,
+        "light-cherry": generate_ceramic_cherry_html,
+        "alabaster-tangerine": generate_alabaster_tangerine_html,
+        "light-tangerine": generate_alabaster_tangerine_html,
+        "porcelain-pear": generate_porcelain_pear_html,
+        "light-pear": generate_porcelain_pear_html,
+        "oled-pink": generate_oled_pink_html,
+        "oled-emerald": generate_oled_emerald_html,
     }
     generator_fn = mapping.get(preset_key.lower().replace("_", "-") if preset_key else "")
     return generator_fn() if generator_fn else None
+
 
 

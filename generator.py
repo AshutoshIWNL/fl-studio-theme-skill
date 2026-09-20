@@ -785,6 +785,156 @@ def get_builtin_presets() -> Dict[str, Dict[str, Any]]:
                 "#F3722C", "#F8961E", "#F9844A", "#F9C74F",
             ],
         },
+        "ceramic-cherry": {
+            "name": "Ceramic Cherry",
+            "light_mode": 1,
+            "hue": 0,
+            "saturation": -251,         # Pure porcelain white panels
+            "lightness": 152,           # High positive lightness (white surface)
+            "contrast": 64,             # High contrast for crisp borders against white
+            "text_brightness": -226,    # Inverts text to dark graphite
+            "text_color": "#59454E",    # Dark Berry Charcoal
+            "selected": "#FF5493",      # Cherry Pink
+            "highlight": "#7D01DA",     # Violet
+            "mute": "#9F00FF",          # Deep Purple
+            "option": "#8F22FF",        # Purple
+            "step_even": "#BEBDBB",     # Warm Light Slate
+            "step_odd": "#7B3EC6",      # Violet Step
+            "pr_grid_back": "#4E4434",
+            "pl_grid_back": "#E8E8E8",  # Crisp light silver playlist grid
+            "ee_grid_back": "#4E4434",
+            "back_pic_filename": "FL STUDIO.png",
+            "back_html_filename": "Default.txt",
+            "back_color": "#F8F5F8",
+            "meters": ["#6010AD", "#7A0AE2", "#770ADC", "#A74DFC", "#D4ADFF", "#FAF4FF"],
+            "wave_colors": ["#6010AD", "#7A0AE2", "#770ADC", "#A74DFC", "#D4ADFF", "#FAF4FF"],
+            "note_colors": [
+                "#FF5493", "#7D01DA", "#9F00FF", "#8F22FF",
+                "#A74DFC", "#C77DFF", "#E0AAFF", "#7B3EC6",
+                "#5A189A", "#3C096C", "#240046", "#FF758F",
+                "#FF8FA3", "#FFB3C1", "#D4ADFF", "#FAF4FF",
+            ],
+        },
+        "alabaster-tangerine": {
+            "name": "Alabaster Tangerine",
+            "light_mode": 1,
+            "hue": 0,
+            "saturation": -251,
+            "lightness": 157,
+            "contrast": 64,
+            "text_brightness": -226,
+            "text_color": "#534543",    # Dark Warm Umber
+            "selected": "#FF8441",      # Tangerine Orange
+            "highlight": "#0076E6",     # Azure Blue
+            "mute": "#006CF2",
+            "option": "#006CF2",
+            "step_even": "#BEBDBB",     # Warm Light Slate
+            "step_odd": "#1A75E7",      # Azure Step
+            "pr_grid_back": "#4E4434",
+            "pl_grid_back": "#E8E8E8",
+            "ee_grid_back": "#4E4434",
+            "back_pic_filename": "FL STUDIO.png",
+            "back_html_filename": "Default.txt",
+            "back_color": "#F8F6F4",
+            "meters": ["#0073EA", "#3091FF", "#5B94FF", "#3D85FF", "#94BEFF", "#E8F2FF"],
+            "wave_colors": ["#0073EA", "#3091FF", "#5B94FF", "#3D85FF", "#94BEFF", "#E8F2FF"],
+            "note_colors": [
+                "#FF8441", "#0076E6", "#006CF2", "#1A75E7",
+                "#3091FF", "#5B94FF", "#FF9F68", "#FFB285",
+                "#FFA07A", "#FF7F50", "#0056B3", "#003D82",
+                "#94BEFF", "#CCE0FF", "#FFCBB0", "#E8F2FF",
+            ],
+        },
+        "porcelain-pear": {
+            "name": "Porcelain Pear",
+            "light_mode": 1,
+            "hue": 0,
+            "saturation": -251,
+            "lightness": 153,
+            "contrast": 64,
+            "text_brightness": -226,
+            "text_color": "#46584D",    # Dark Forest Charcoal
+            "selected": "#75E600",      # Pear Lime
+            "highlight": "#21EC00",     # Electric Lime
+            "mute": "#3BE65C",          # Emerald Mint
+            "option": "#3BE65C",
+            "step_even": "#BEBDBB",
+            "step_odd": "#1E822E",      # Crisp Forest Green Step
+            "pr_grid_back": "#4E4434",
+            "pl_grid_back": "#E8E8E8",
+            "ee_grid_back": "#4E4434",
+            "back_pic_filename": "FL STUDIO.png",
+            "back_html_filename": "Default.txt",
+            "back_color": "#F6FAF6",
+            "meters": ["#0AE61B", "#63EE7B", "#64E487", "#30FF9F", "#5BFFC6", "#DBFFF1"],
+            "wave_colors": ["#0AE61B", "#63EE7B", "#64E487", "#30FF9F", "#5BFFC6", "#DBFFF1"],
+            "note_colors": [
+                "#75E600", "#21EC00", "#3BE65C", "#33CE43",
+                "#0AE61B", "#63EE7B", "#30FF9F", "#5BFFC6",
+                "#8CEE00", "#A6FF2E", "#00C853", "#009624",
+                "#A7F3D0", "#D1FAE5", "#E8F5E9", "#DBFFF1",
+            ],
+        },
+        "oled-pink": {
+            "name": "OLED Pink",
+            "light_mode": 1,
+            "hue": 0,
+            "saturation": 0,            # Pure monochrome base
+            "lightness": -125,          # Ultra dark OLED panels
+            "contrast": 45,
+            "text_brightness": 255,
+            "text_color": "#FFF0F5",    # Snow Blush White
+            "selected": "#FF1493",      # Deep Electric Hot Pink
+            "highlight": "#FF69B4",     # Hot Pink
+            "mute": "#FF007F",          # Neon Rose
+            "option": "#FF1493",
+            "step_even": "#3D1B2E",     # Dark Rose Charcoal
+            "step_odd": "#12080D",      # Obsidian Pink Shadow
+            "pr_grid_back": "#10060B",
+            "pl_grid_back": "#10060B",
+            "ee_grid_back": "#10060B",
+            "back_pic_filename": "FL STUDIO dark.png",
+            "back_html_filename": "Default.txt",
+            "back_color": "#050204",
+            "meters": ["#4A152B", "#7D1D45", "#B8145E", "#FF1493", "#FF69B4", "#FF007F"],
+            "wave_colors": ["#4A152B", "#7D1D45", "#B8145E", "#FF1493", "#FF69B4", "#FF007F"],
+            "note_colors": [
+                "#FF1493", "#FF69B4", "#FF007F", "#FF2A85",
+                "#FF70A6", "#E0218A", "#FF5C8A", "#D90368",
+                "#9B5DE5", "#F15BB5", "#00BBF9", "#00F5D4",
+                "#FEE440", "#FFAAA6", "#FF85A1", "#FFC2D1",
+            ],
+        },
+        "oled-emerald": {
+            "name": "OLED Emerald",
+            "light_mode": 1,
+            "hue": 0,
+            "saturation": 0,            # Pure monochrome base
+            "lightness": -125,          # Ultra dark OLED panels
+            "contrast": 45,
+            "text_brightness": 255,
+            "text_color": "#F0FFF4",    # Mint White
+            "selected": "#00FF66",      # Radioactive Electric Emerald
+            "highlight": "#39FF14",     # Phosphor Lime
+            "mute": "#00CC52",          # Emerald Warning
+            "option": "#00FF66",
+            "step_even": "#152618",     # Obsidian Emerald Charcoal
+            "step_odd": "#08120A",      # Trench Black
+            "pr_grid_back": "#050D06",
+            "pl_grid_back": "#050D06",
+            "ee_grid_back": "#050D06",
+            "back_pic_filename": "FL STUDIO dark.png",
+            "back_html_filename": "Default.txt",
+            "back_color": "#020603",
+            "meters": ["#103518", "#1B5E20", "#2E7D32", "#00E676", "#00FF66", "#76FF03"],
+            "wave_colors": ["#103518", "#1B5E20", "#2E7D32", "#00E676", "#00FF66", "#76FF03"],
+            "note_colors": [
+                "#00FF66", "#39FF14", "#00E676", "#76FF03",
+                "#64DD17", "#00C853", "#69F0AE", "#B9F6CA",
+                "#1DE9B6", "#00B0FF", "#FFD600", "#FF6D00",
+                "#00E5FF", "#A7F3D0", "#6EE7B7", "#34D399",
+            ],
+        },
     }
 
 
@@ -892,6 +1042,7 @@ def main():
     # Guardrails validation
     theme_dict = {
         "lightness": builder.lightness,
+        "text_brightness": builder.text_brightness,
         "step_even": builder.step_even,
         "step_odd": builder.step_odd,
         "text_color": builder.text_color,

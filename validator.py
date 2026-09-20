@@ -63,12 +63,20 @@ def validate_theme_dict(palette: Dict[str, Any]) -> List[ValidationIssue]:
                     category="Luminance",
                     message=f"Lightness is {val} (< -100). This crushes panel contrast and turns FL Studio UI elements pitch-black. Ideal dark themes use -50 to -85."
                 ))
-            elif val > 150:
-                issues.append(ValidationIssue(
-                    level="INFO",
-                    category="Luminance",
-                    message=f"Lightness is {val} (> 150). High brightness might cause glare; verify Lightmode=1."
-                ))
+            elif val > 50:
+                tb = palette.get("text_brightness")
+                if tb is not None and int(tb) > 0:
+                    issues.append(ValidationIssue(
+                        level="WARNING",
+                        category="Luminance",
+                        message=f"Light panels detected (Lightness={val} > 50) with light text (Text={tb}). UI labels will be unreadable white-on-white! Invert text using text_brightness=-226."
+                    ))
+                elif val > 160:
+                    issues.append(ValidationIssue(
+                        level="INFO",
+                        category="Luminance",
+                        message=f"Lightness is {val} (> 160). High brightness might cause glare; verify Lightmode=1."
+                    ))
         except (ValueError, TypeError):
             pass
 
