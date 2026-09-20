@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FL Studio Theme Designer & AI Skill — 12 Pro Themes & Dynamic Wallpapers</title>
+  <meta name="description" content="Production-grade custom themes and dynamic 30 FPS audio-safe HTML5 wallpapers for Image-Line FL Studio. Free & Open Source.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎛️</text></svg>">
+  <style>
+    :root {
+      --bg-dark: #0a0c10;
+      --bg-card: #12161f;
+      --bg-card-hover: #181e2b;
+      --border: #232a3b;
+      --border-focus: #3b82f6;
+      --text: #f0f6fc;
+      --text-muted: #8b949e;
+      --accent: #ff2a85;
+      --radius: 12px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: rgba(18, 22, 31, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand-icon {
+      font-size: 24px;
+      background: #1f2533;
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .brand-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 16px rgba(255, 42, 133, 0.35);
+    }
+    .btn-primary:hover {
+      filter: brightness(1.15);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: #1e2433;
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover {
+      background: #283145;
+      border-color: #3b4661;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 32px 16px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      font-size: 12px;
+      padding: 4px 10px;
+      background: #161b26;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text-muted);
+    }
+
+    /* App Layout */
+    .app-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+      margin-top: 24px;
+      min-height: 720px;
+    }
+
+    /* Sidebar Themes List */
+    .sidebar {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      height: fit-content;
+      max-height: 820px;
+      overflow-y: auto;
+    }
+    .sidebar-header {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      padding-left: 6px;
+    }
+    .theme-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 6px;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+      background: transparent;
+    }
+    .theme-item:hover {
+      background: var(--bg-card-hover);
+    }
+    .theme-item.active {
+      background: #1c2333;
+      border-color: var(--item-accent, var(--accent));
+      box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+    }
+    .theme-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 8px currentColor;
+    }
+    .theme-item-info {
+      flex: 1;
+      overflow: hidden;
+    }
+    .theme-item-name {
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .theme-item-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Stage Area */
+    .stage {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Preview Canvas Box */
+    .preview-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .preview-header {
+      padding: 12px 18px;
+      background: #151a24;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .preview-toggles {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toggle-btn {
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #1f2636;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      transition: all 0.15s;
+    }
+    .toggle-btn.active {
+      background: #2b354d;
+      color: #fff;
+      border-color: #4f5d7e;
+    }
+
+    .preview-viewport {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      background: #080a0e;
+      overflow: hidden;
+    }
+
+    /* Live Iframe */
+    #preview-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Screenshot View */
+    #preview-img-container {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: #0a0d13;
+    }
+    #preview-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .placeholder-msg {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+    }
+    .placeholder-msg h3 {
+      font-size: 18px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    /* FL Studio DAW Mockup Overlay */
+    .daw-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px;
+      background: radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 100%);
+      transition: opacity 0.2s ease;
+    }
+    .daw-overlay.hidden {
+      opacity: 0;
+    }
+
+    /* Mockup: Top Bar */
+    .daw-topbar {
+      background: rgba(20, 24, 33, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #e0e6ed;
+      font-size: 12px;
+      font-family: monospace;
+    }
+    .daw-topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .daw-brand {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .daw-bpm {
+      background: #11141c;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Mockup: Channel Rack */
+    .daw-channel-rack {
+      align-self: center;
+      width: 580px;
+      max-width: 95%;
+      background: rgba(24, 28, 38, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+      padding: 12px;
+    }
+    .rack-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      margin-bottom: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+    .rack-channel {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .channel-knob {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #333d52;
+      border: 1px solid #4a5773;
+    }
+    .channel-name {
+      width: 90px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .channel-steps {
+      display: flex;
+      gap: 3px;
+      flex: 1;
+    }
+    .step-btn {
+      flex: 1;
+      height: 20px;
+      border-radius: 2px;
+      background: #2a3142;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      transition: background 0.2s ease;
+    }
+    .step-btn.active {
+      box-shadow: 0 0 6px currentColor;
+    }
+
+    /* Mockup: Mini Mixer */
+    .daw-mixer {
+      align-self: flex-start;
+      display: flex;
+      gap: 6px;
+      background: rgba(20, 24, 33, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 8px 12px;
+    }
+    .meter-strip {
+      width: 8px;
+      height: 50px;
+      background: #141720;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 1px;
+      padding: 1px;
+    }
+    .meter-led {
+      width: 100%;
+      height: 7px;
+      border-radius: 1px;
+      opacity: 0.8;
+    }
+
+    /* Theme Info Panel */
+    .theme-info-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .info-left h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .info-tagline {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .info-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* Color Swatches */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .swatch-card {
+      background: #171d29;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.15s;
+    }
+    .swatch-card:hover {
+      border-color: #4a5673;
+      transform: translateY(-1px);
+    }
+    .swatch-color {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.15);
+      flex-shrink: 0;
+    }
+    .swatch-info {
+      overflow: hidden;
+    }
+    .swatch-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .swatch-hex {
+      font-size: 12px;
+      font-family: monospace;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Action Buttons */
+    .theme-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Install Guide */
+    .guide-section {
+      margin-top: 48px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+    .guide-section h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .step-box {
+      background: #171d29;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+    }
+    .step-num {
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-box h3 {
+      font-size: 16px;
+      margin-top: 6px;
+      margin-bottom: 8px;
+    }
+    .step-box p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .code-box {
+      background: #0c0e14;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-family: monospace;
+      font-size: 11px;
+      color: #a5b4fc;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .code-box:hover {
+      background: #11141d;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    /* Toast Notification */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1f293d;
+      color: #fff;
+      border: 1px solid #3b82f6;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 0.25s ease;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 960px) {
+      .app-layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        max-height: 220px;
+        display: flex;
+        overflow-x: auto;
+        gap: 8px;
+        padding: 12px;
+      }
+      .sidebar-header { display: none; }
+      .theme-item {
+        flex-shrink: 0;
+        width: 190px;
+        margin-bottom: 0;
+      }
+      .theme-info-panel {
+        grid-template-columns: 1fr;
+      }
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .daw-channel-rack {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header>
+    <a href="#" class="brand">
+      <span class="brand-icon">🎛️</span>
+      <div>
+        <span class="brand-title">FL Studio Theme Designer & AI Skill</span>
+        <span class="badge">v1.0.0</span>
+      </div>
+    </a>
+    <div class="header-actions">
+      <a href="https://github.com/AshutoshIWNL/fl-studio-theme-skill/releases" target="_blank" class="btn btn-primary" id="btn-download-pack">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download 12 Themes (.zip)
+      </a>
+      <a href="https://github.com/AshutoshIWNL/fl-studio-theme-skill" target="_blank" class="btn btn-secondary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Hero Intro -->
+    <div class="hero">
+      <h1>Aesthetic Themes & Dynamic Wallpapers for FL Studio</h1>
+      <p>12 hand-tuned, WCAG-contrast certified color schemes paired with lightweight, 30 FPS GPU-accelerated HTML5 backgrounds. Zero audio underruns. 100% free & open source.</p>
+      <div class="hero-tags">
+        <span class="tag">⚡ 30 FPS Delta-Time Throttled</span>
+        <span class="tag">🛡️ Zero-GC Loop (No ASIO Clicks)</span>
+        <span class="tag">🎛️ FL Studio 21 / 2024 / 2025+</span>
+        <span class="tag">🤖 AI Skill (Antigravity & Claude)</span>
+      </div>
+    </div>
+
+    <!-- Main App Layout -->
+    <div class="app-layout">
+      <!-- Sidebar Theme Selector -->
+      <div class="sidebar">
+        <div class="sidebar-header">Shipped Presets (12)</div>
+        <div id="themes-list"></div>
+      </div>
+
+      <!-- Stage & Preview -->
+      <div class="stage">
+        <!-- Interactive Preview Box -->
+        <div class="preview-card">
+          <div class="preview-header">
+            <div>
+              <strong id="preview-title">Theme Preview</strong>
+              <span id="preview-anim-name" style="font-size: 12px; color: var(--text-muted); margin-left: 8px;"></span>
+            </div>
+            <div class="preview-toggles">
+              <button class="toggle-btn active" id="btn-mode-live">⚡ Live Animation</button>
+              <button class="toggle-btn" id="btn-mode-screenshot">📸 Screenshot</button>
+              <button class="toggle-btn active" id="btn-toggle-daw">🎛️ FL Studio Mockup</button>
+            </div>
+          </div>
+
+          <div class="preview-viewport">
+            <!-- Dynamic Wallpaper Iframe -->
+            <iframe id="preview-iframe" sandbox="allow-scripts" title="Dynamic Wallpaper Preview"></iframe>
+
+            <!-- Screenshot View (Fallback) -->
+            <div id="preview-img-container">
+              <img id="preview-img" src="" alt="Theme Screenshot">
+              <div class="placeholder-msg" id="preview-img-placeholder" style="display: none;">
+                <h3>📸 Screenshot In Progress</h3>
+                <p>Switch to <strong>Live Animation</strong> above to see this theme running right in your browser!</p>
+              </div>
+            </div>
+
+            <!-- FL Studio UI Mockup Overlay -->
+            <div class="daw-overlay" id="daw-overlay">
+              <!-- Top Transport Bar -->
+              <div class="daw-topbar">
+                <div class="daw-topbar-left">
+                  <span class="daw-brand">FL STUDIO 2025</span>
+                  <span class="daw-bpm">128.000 BPM</span>
+                  <span style="color: #60a5fa;">PAT</span>
+                  <span style="color: #34d399;">▶ PLAY</span>
+                </div>
+                <div id="daw-active-theme-label" style="font-size: 11px; color: var(--text-muted);"></div>
+              </div>
+
+              <!-- Channel Rack Mockup -->
+              <div class="daw-channel-rack">
+                <div class="rack-header">
+                  <span>Channel Rack (All)</span>
+                  <span style="font-size: 10px;">Swing: 0%</span>
+                </div>
+                <!-- 4 Tracks -->
+                <div class="rack-channel">
+                  <div class="channel-knob"></div>
+                  <div class="channel-name">Kick (808)</div>
+                  <div class="channel-steps" id="steps-row-1"></div>
+                </div>
+                <div class="rack-channel">
+                  <div class="channel-knob"></div>
+                  <div class="channel-name">Clap (Layer)</div>
+                  <div class="channel-steps" id="steps-row-2"></div>
+                </div>
+                <div class="rack-channel">
+                  <div class="channel-knob"></div>
+                  <div class="channel-name">Hi-Hat (Closed)</div>
+                  <div class="channel-steps" id="steps-row-3"></div>
+                </div>
+                <div class="rack-channel">
+                  <div class="channel-knob"></div>
+                  <div class="channel-name">Snare (Main)</div>
+                  <div class="channel-steps" id="steps-row-4"></div>
+                </div>
+              </div>
+
+              <!-- Mini Mixer Peak Meters -->
+              <div class="daw-mixer">
+                <div class="meter-strip" id="mixer-m1"></div>
+                <div class="meter-strip" id="mixer-m2"></div>
+                <div class="meter-strip" id="mixer-m3"></div>
+                <div class="meter-strip" id="mixer-m4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Theme Info & Palette Inspector -->
+        <div class="theme-info-panel">
+          <div class="info-left">
+            <h2 id="theme-name">Cyber Blossom</h2>
+            <div class="info-tagline" id="theme-tagline">Neo-Tokyo Sakura Night</div>
+            <p class="info-desc" id="theme-desc">Neon sakura pink accents over dark charcoal panels with a dynamic petal-drift canvas.</p>
+
+            <div class="theme-actions">
+              <button class="btn btn-primary" id="btn-copy-prompt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Copy AI Prompt
+              </button>
+              <a href="#install-guide" class="btn btn-secondary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                Install Instructions
+              </a>
+            </div>
+          </div>
+
+          <div class="info-right">
+            <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">
+              Theme Color Palette (Click to Copy)
+            </div>
+            <div class="palette-grid" id="palette-swatches"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick 3-Step Install Guide -->
+    <div class="guide-section" id="install-guide">
+      <h2>How to Install in 3 Steps</h2>
+      <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto;">No command line or Python required. Works with FL Studio 21, 2024, and 2025+.</p>
+
+      <div class="steps-grid">
+        <div class="step-box">
+          <div class="step-num">1</div>
+          <h3>Download the Pack</h3>
+          <p>Download <strong>fl-studio-themes-pack.zip</strong> from our GitHub Releases.</p>
+          <a href="https://github.com/AshutoshIWNL/fl-studio-theme-skill/releases" target="_blank" class="code-box" style="text-decoration: none;">
+            <span>📦 fl-studio-themes-pack.zip</span>
+            <span>Download ↗</span>
+          </a>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num">2</div>
+          <h3>Paste in Themes Folder</h3>
+          <p>Extract all folders directly into your FL Studio Themes directory:</p>
+          <div class="code-box" onclick="copyText('%USERPROFILE%\\Documents\\Image-Line\\FL Studio\\Settings\\Themes\\', 'Windows path copied!')" title="Click to copy Windows path">
+            <span>Windows: %USERPROFILE%\Documents\...</span>
+            <span>Copy 📋</span>
+          </div>
+          <div class="code-box" onclick="copyText('~/Documents/Image-Line/FL Studio/Settings/Themes/', 'macOS path copied!')" title="Click to copy macOS path">
+            <span>macOS: ~/Documents/Image-Line/...</span>
+            <span>Copy 📋</span>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num">3</div>
+          <h3>Select in FL Studio</h3>
+          <p>Open FL Studio and press <strong>F10</strong> (Options $\rightarrow$ Theme settings). Select your favorite theme from the list!</p>
+          <div class="code-box">
+            <span>Dynamic Wallpaper: View > Background</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>FL Studio Theme Designer & AI Skill &bull; Created by <a href="https://github.com/AshutoshIWNL" target="_blank">AshutoshIWNL</a></p>
+    <p style="margin-top: 6px; font-size: 11px;">Not affiliated with or endorsed by Image-Line Software. FL Studio is a registered trademark of Image-Line.</p>
+  </footer>
+
+  <div id="toast">Copied to clipboard!</div>
+
+  <!-- Load Themes Data and Dynamic Wallpaper Animations -->
+  <script src="animations.js"></script>
+  <script>
+    let themes = [];
+    let currentTheme = null;
+    let viewMode = 'live'; // 'live' | 'screenshot'
+
+    const toast = document.getElementById('toast');
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+
+    function copyText(text, successMsg = 'Copied to clipboard!') {
+      navigator.clipboard.writeText(text).then(() => showToast(successMsg));
+    }
+
+    // Initialize
+    async function init() {
+      try {
+        const res = await fetch('themes.json');
+        themes = await res.json();
+      } catch (e) {
+        console.error("Failed loading themes.json", e);
+      }
+
+      renderSidebar();
+      if (themes.length > 0) {
+        selectTheme(themes[0]);
+      }
+      setupListeners();
+      renderMockupSteps();
+      renderMockupMeters();
+    }
+
+    // Render Sidebar
+    function renderSidebar() {
+      const list = document.getElementById('themes-list');
+      list.innerHTML = '';
+      themes.forEach(t => {
+        const item = document.createElement('div');
+        item.className = 'theme-item';
+        item.id = `item-${t.id}`;
+        item.style.setProperty('--item-accent', t.accent);
+        item.onclick = () => selectTheme(t);
+        item.innerHTML = `
+          <div class="theme-dot" style="background: ${t.accent}; color: ${t.accent};"></div>
+          <div class="theme-item-info">
+            <div class="theme-item-name">${t.name}</div>
+            <div class="theme-item-sub">${t.tagline}</div>
+          </div>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    // Select Theme
+    function selectTheme(t) {
+      currentTheme = t;
+
+      // Update sidebar active class
+      document.querySelectorAll('.theme-item').forEach(el => el.classList.remove('active'));
+      const activeEl = document.getElementById(`item-${t.id}`);
+      if (activeEl) activeEl.classList.add('active');
+
+      // Update root accent variable
+      document.documentElement.style.setProperty('--accent', t.accent);
+
+      // Update info panel
+      document.getElementById('theme-name').textContent = t.name;
+      document.getElementById('theme-tagline').textContent = t.tagline;
+      document.getElementById('theme-desc').textContent = t.description;
+      document.getElementById('preview-title').textContent = `${t.name} Preview`;
+      document.getElementById('preview-anim-name').textContent = `• ${t.animationName}`;
+      document.getElementById('daw-active-theme-label').textContent = `Theme: ${t.name}`;
+
+      // Update color swatches
+      renderPalette(t);
+
+      // Update DAW Mockup steps colors
+      updateMockupSteps(t);
+
+      // Update Preview Mode Content
+      updatePreviewContent();
+    }
+
+    // Render Color Palette
+    function renderPalette(t) {
+      const container = document.getElementById('palette-swatches');
+      container.innerHTML = '';
+      const swatches = [
+        { label: 'Accent', hex: t.accent },
+        { label: 'Highlight', hex: t.highlight },
+        { label: 'Mute', hex: t.mute },
+        { label: 'Option', hex: t.option },
+        { label: 'Step Even', hex: t.stepEven },
+        { label: 'Step Odd', hex: t.stepOdd },
+        { label: 'Canvas BG', hex: t.backColor }
+      ];
+
+      swatches.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'swatch-card';
+        card.onclick = () => copyText(s.hex, `Copied ${s.label} (${s.hex})!`);
+        card.innerHTML = `
+          <div class="swatch-color" style="background: ${s.hex};"></div>
+          <div class="swatch-info">
+            <div class="swatch-label">${s.label}</div>
+            <div class="swatch-hex">${s.hex}</div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Update Preview Viewport
+    function updatePreviewContent() {
+      if (!currentTheme) return;
+
+      const iframe = document.getElementById('preview-iframe');
+      const imgContainer = document.getElementById('preview-img-container');
+      const img = document.getElementById('preview-img');
+      const placeholder = document.getElementById('preview-img-placeholder');
+
+      if (viewMode === 'live') {
+        iframe.style.display = 'block';
+        imgContainer.style.display = 'none';
+
+        // Load animation from animations.js
+        if (window.THEME_ANIMATIONS && window.THEME_ANIMATIONS[currentTheme.id]) {
+          iframe.srcdoc = window.THEME_ANIMATIONS[currentTheme.id];
+        } else {
+          iframe.srcdoc = `<body style="background:${currentTheme.backColor}; display:flex; align-items:center; justify-content:center; color:${currentTheme.accent}; font-family:sans-serif;"><h3>${currentTheme.name}</h3></body>`;
+        }
+      } else {
+        iframe.style.display = 'none';
+        imgContainer.style.display = 'flex';
+
+        const screenshotPath = `assets/screenshots/${currentTheme.screenshot}`;
+        img.src = screenshotPath;
+        img.onload = () => {
+          img.style.display = 'block';
+          placeholder.style.display = 'none';
+        };
+        img.onerror = () => {
+          img.style.display = 'none';
+          placeholder.style.display = 'block';
+        };
+      }
+    }
+
+    // Render Channel Rack Steps
+    function renderMockupSteps() {
+      const stepPatterns = [
+        [1, 0, 0, 0,  1, 0, 0, 0,  1, 0, 0, 0,  1, 0, 0, 0], // Kick
+        [0, 0, 0, 0,  1, 0, 0, 0,  0, 0, 0, 0,  1, 0, 0, 0], // Clap
+        [1, 1, 1, 1,  1, 1, 1, 1,  1, 1, 1, 1,  1, 1, 1, 1], // Hi-hat
+        [0, 0, 0, 0,  0, 0, 1, 0,  0, 0, 0, 0,  0, 0, 1, 0]  // Snare
+      ];
+
+      for (let r = 1; r <= 4; r++) {
+        const row = document.getElementById(`steps-row-r`.replace('r', r));
+        row.innerHTML = '';
+        const pattern = stepPatterns[r - 1];
+        for (let s = 0; s < 16; s++) {
+          const btn = document.createElement('div');
+          btn.className = 'step-btn';
+          btn.dataset.index = s;
+          if (pattern[s] === 1) btn.classList.add('active');
+          row.appendChild(btn);
+        }
+      }
+    }
+
+    // Update Step Colors for Active Theme
+    function updateMockupSteps(t) {
+      document.querySelectorAll('.step-btn').forEach(btn => {
+        const idx = parseInt(btn.dataset.index, 10);
+        const barGroup = Math.floor(idx / 4) % 2; // 4-beat bar grouping
+        const baseColor = barGroup === 0 ? t.stepEven : t.stepOdd;
+
+        if (btn.classList.contains('active')) {
+          btn.style.background = t.accent;
+          btn.style.color = t.accent;
+        } else {
+          btn.style.background = baseColor;
+          btn.style.color = 'transparent';
+        }
+      });
+    }
+
+    // Render Mixer Peak Meters
+    function renderMockupMeters() {
+      const meterColors = ['#00F5A0', '#39FF14', '#A8FF78', '#FFD166', '#FF9F1C', '#FF3B30'];
+      for (let m = 1; m <= 4; m++) {
+        const strip = document.getElementById(`mixer-m${m}`);
+        strip.innerHTML = '';
+        const height = Math.floor(Math.random() * 3) + 3; // active LEDs
+        for (let i = 0; i < 6; i++) {
+          const led = document.createElement('div');
+          led.className = 'meter-led';
+          led.style.background = meterColors[i];
+          led.style.opacity = i <= height ? '0.9' : '0.15';
+          strip.appendChild(led);
+        }
+      }
+    }
+
+    // Setup Listeners
+    function setupListeners() {
+      const btnLive = document.getElementById('btn-mode-live');
+      const btnScreenshot = document.getElementById('btn-mode-screenshot');
+      const btnDaw = document.getElementById('btn-toggle-daw');
+      const dawOverlay = document.getElementById('daw-overlay');
+      const btnCopyPrompt = document.getElementById('btn-copy-prompt');
+
+      btnLive.onclick = () => {
+        viewMode = 'live';
+        btnLive.classList.add('active');
+        btnScreenshot.classList.remove('active');
+        updatePreviewContent();
+      };
+
+      btnScreenshot.onclick = () => {
+        viewMode = 'screenshot';
+        btnScreenshot.classList.add('active');
+        btnLive.classList.remove('active');
+        updatePreviewContent();
+      };
+
+      btnDaw.onclick = () => {
+        dawOverlay.classList.toggle('hidden');
+        btnDaw.classList.toggle('active');
+      };
+
+      btnCopyPrompt.onclick = () => {
+        if (!currentTheme) return;
+        const prompt = `Create an FL Studio theme named "${currentTheme.name}" with accent ${currentTheme.accent}, highlight ${currentTheme.highlight}, text #FFFFFF, panel Hue ${currentTheme.hue}, Saturation ${currentTheme.saturation}, and dynamic wallpaper with ${currentTheme.animationName}.`;
+        copyText(prompt, 'AI Prompt copied! Paste into Antigravity or Claude.');
+      };
+    }
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
